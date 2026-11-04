@@ -1,0 +1,22 @@
+<section class="library">
+  <h1>Game Library</h1>
+
+  <div class="card-grid">
+    @for (product of products(); track product.id) {
+      <article class="card">
+        <img class="card-image" [src]="product.image" [alt]="product.title" loading="lazy" />
+
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="genre">{{ product.genre }}</span>
+            <span>{{ product.year }}</span>
+          </div>
+
+          <h2>{{ product.title }}</h2>
+          <p>{{ product.description }}</p>
+          <span class="rating">★ {{ product.rating }} / 10</span>
+        </div>
+      </article>
+    }
+  </div>
+</section>
